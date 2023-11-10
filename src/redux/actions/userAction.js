@@ -20,7 +20,7 @@ export const userSignUpAction = (user) => async (dispatch) => {
   dispatch({ type: USER_SIGNUP_REQUEST });
   try {
     const { data } = await axios.post(
-      "https://gembulcimotbackend.onrender.com/signup",
+      "/signup",
       user
     );
     dispatch({
@@ -42,7 +42,7 @@ export const userSignInAction = (user) => async (dispatch) => {
   dispatch({ type: USER_SIGNIN_REQUEST });
   try {
     const { data } = await axios.post(
-      "https://gembulcimotbackend.onrender.com/signin",
+      "/signin",
       user
     );
     localStorage.setItem("userInfo", JSON.stringify(data));
@@ -65,7 +65,7 @@ export const userProfileAction = () => async (dispatch) => {
   dispatch({ type: USER_LOAD_REQUEST });
   try {
     const { data } = await axios.get(
-      "https://gembulcimotbackend.onrender.com/me"
+      "/me"
     );
     dispatch({
       type: USER_LOAD_SUCCESS,
@@ -85,7 +85,7 @@ export const userLogoutAction = () => async (dispatch) => {
   try {
     localStorage.removeItem("userInfo");
     const { data } = await axios.get(
-      "https://gembulcimotbackend.onrender.com/logout"
+      "/logout"
     );
     dispatch({
       type: USER_LOGOUT_SUCCESS,
