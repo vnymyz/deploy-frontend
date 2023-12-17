@@ -26,7 +26,7 @@ import { toast } from "react-toastify";
 import CommentList from "../components/CommentList";
 import { io } from "socket.io-client";
 
-const socket = io("/", {
+const socket = io("https://gembulcimotbackend.onrender.com", {
   reconnection: true,
 });
 
