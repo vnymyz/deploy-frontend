@@ -18,7 +18,7 @@ import { io } from "socket.io-client";
 import flatYellow from "../images/flat-yellow.png";
 import flatBlue from "../images/flat-blue.png";
 
-const socket = io("/", {
+const socket = io("https://gembulcimotbackend.onrender.com", {
   reconnection: true,
 });
 
